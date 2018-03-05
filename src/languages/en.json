@@ -1,0 +1,53 @@
+{
+    "AUTH_FORGOT_PASSWORD":             "Forgot password?",
+    "AUTH_FORGOT_PASSWORD_INFO":        "Submit your email address and we'll send you a link to reset your password:",
+    "AUTH_FORGOT_PASSWORD_CONFIRM":     "An email has been sent to you. Please follow its instructions to reset your password.",
+    "AUTH_FORGOT_PASSWORD_AD_USER":     "You cannot change your password from this module. Please connect using your LDAP credentials.",
+    "AUTH_RESET_PASSWORD_INFO":         "Please choose a new password ({{n}} characters minimum):",
+    "AUTH_RESET_PARAMS_ERROR":          "This link is no longer valid.",
+    "AUTH_RESET_PASSWORD_CONFIRM":      "Your password has been successfully changed. You can now login with your new credentials.",
+
+    "HEADER_ADMIN": "Administration",
+
+    "BUTTON_SIGN_IN":                   "Sign in",
+    "BUTTON_SIGN_OUT":                  "Sign out",
+    "BUTTON_RESET_PASSWORD":            "Reset password",
+    "BUTTON_CANCEL":                    "Cancel",
+    "BUTTON_DOWNLOAD":                  "Download", 
+
+    "ERROR_AUTHENTICATION":             "Invalid credentials.",
+    "ERROR_EMAIL_NOT_FOUND":            "Email not found",
+    "ERROR_MATCH_PASSWORD":             "Passwords don't match",
+    "ERROR_RESET_LINK":                 "This link is no longer valid",
+    "ERROR_LENGTH_PASSWORD":            "Password should contain at least 5 characters",
+    "NEW_PASSWORD":                     "New password",
+    "NEW_PASSWORD_CONFIRM":             "Confirm new password",
+
+    "MESSAGE_CONFIRM_RESET_PWD":        "The password has been updated",
+
+    "NO_DATA_PAGE":                     "No landing page found, create one now.",
+
+    "FILTER_ON": "Filter on:",
+    "ORDER_BY": "Order by:",
+
+    "TITLE_PASSWORD_RESET":             "Reset password",
+    "TITLE_PASSWORD_FORGOT":            "Forgot password",
+    "TITLE_LOGIN":                      "Login",
+
+    "USERS_EMAIL":                      "Email",
+    "USERS_LOGIN":                      "Login",
+    "USERS_EMAIL_OR_LOGIN":             "Login or email",
+    "USERS_PASSWORD":                   "Password",
+
+    "HTML_SELECTOR":                    "Search a campaign",
+    "HTML_TITLE":                       "Download a Unica specific HTML",
+    "HTML_DESCRIPTION":                 "Search an 1M Sending email campaign in the list below to download the Unica specific HTML",
+    "HTML_INFO":                        "HTML to download",
+    "HTML_WARNING":                     "Only \"Draft\" status campaigns will appear in the list.",
+    "APP_NAME":                         "HTML Translator",
+
+    "META_TITLE_LOGIN":                 "Sign in - HTML Translator",
+    "META_TITLE_PASSWORD_FORGOT":       "Forgot password - HTML Translator",
+    "META_TITLE_PASSWORD_RESET":        "Reset password - HTML Translator",
+    "META_TITLE_APP":                   "HTML Translator"
+}
