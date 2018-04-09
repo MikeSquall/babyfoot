@@ -8,6 +8,7 @@ import Vuex from 'vuex';
 import axios from 'axios';
 import ElementUI from 'element-ui';
 import locale from 'element-ui/lib/locale/lang/en';
+import Icon from 'vue-awesome/components/Icon';
 
 // Load intern component
 import App from './App';
@@ -21,6 +22,8 @@ import i18n from './languages/i18n';
 Vue.use(VueAxios, axios);
 Vue.use(ElementUI, { locale });
 Vue.use(Vuex);
+
+Vue.component('icon', Icon);
 
 Vue.config.productionTip = false;
 
