@@ -22,7 +22,7 @@
 import Team from '@/components/Team/Team';
 
 export default {
-  name: 'team-container',
+  name: 'teams-container',
   components: { Team },
   created() {
     this.$store.dispatch('getTeams');

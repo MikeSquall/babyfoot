@@ -26,6 +26,7 @@ export default {
 .el-header {
   background-color: #409EFF;
   position: fixed;
+  z-index: 999;
   top: 0;
   width: 100%;
   padding: 15px;

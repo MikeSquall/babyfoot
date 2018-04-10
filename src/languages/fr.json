@@ -1,53 +1,13 @@
 {
-    "AUTH_FORGOT_PASSWORD":                 "Mot de passe oublié ?",
-    "AUTH_FORGOT_PASSWORD_INFO":            "Saisissez votre adresse email pour recevoir les instructions de réinitialisation de votre mot de passe :",
-    "AUTH_FORGOT_PASSWORD_CONFIRM":         "Un email vous a été envoyé. Veuillez suivre les instructions qu'il contient pour réinitialiser votre mot de passe.",
-    "AUTH_FORGOT_PASSWORD_AD_USER":         "Vous ne pouvez pas modifier votre mot de passe depuis ce module. Veuillez vous connecter en utilisant vos identifiants LDAP.",
-    "AUTH_RESET_PASSWORD_INFO":             "Veuillez choisir un nouveau mot de passe ({{n}} caractères minimum) :",
-    "AUTH_RESET_PARAMS_ERROR":              "Ce lien n'est plus valide.",
-    "AUTH_RESET_PASSWORD_CONFIRM":          "Votre mot de passe a été modifié avec succès. Vous pouvez maintenant vous connecter avec vos nouveaux identifiants.",
+    "RANKING":                   "Classement",
+    "TEAMS":                     "Équipes",
+    "PLAYERS":                   "Joueurs",
+    "MATCHS":                    "Matchs",
 
-    "HEADER_ADMIN": "Administration",
+    "TEAM_LIST":                 "Liste des équipes",
 
-    "BUTTON_SIGN_IN":                       "Connexion",
-    "BUTTON_SIGN_OUT":                      "Se déconnecter",
-    "BUTTON_RESET_PASSWORD":                "Réinitialiser le mot de passe",
-    "BUTTON_CANCEL":                        "Annuler",
-    "BUTTON_DOWNLOAD":                      "Télécharger",
-
-    "ERROR_AUTHENTICATION":                 "Identifiants incorrects.",
-    "ERROR_EMAIL_NOT_FOUND":                "L'adresse email spécifiée n'existe pas",
-    "ERROR_MATCH_PASSWORD":                 "Les mots de passe ne correspondent pas",
-    "ERROR_RESET_LINK":                     "Le lien n'est plus valide",
-    "ERROR_LENGTH_PASSWORD":                "Le mot de passe doit contenir au moins 5 catactères",
-    "NEW_PASSWORD":                         "Nouveau mot de passe",
-    "NEW_PASSWORD_CONFIRM":                 "Confirmation mot de passe",
-
-    "MESSAGE_CONFIRM_RESET_PWD":            "Le mot de passe a bien été modifié",
-
-    "NO_DATA_PAGE":                         "Aucune landing page trouvée.",
-
-    "FILTER_ON": "Filter sur :",
-    "ORDER_BY": "Ordonner par :",
-
-    "TITLE_PASSWORD_RESET":                 "Réinitialisation du mot de passe",
-    "TITLE_PASSWORD_FORGOT":                "Mot de passe oublié",
-    "TITLE_LOGIN":                          "Connexion",
-
-    "USERS_EMAIL":                          "Email",
-    "USERS_LOGIN":                          "Nom d'utilisateur",
-    "USERS_EMAIL_OR_LOGIN":                 "Nom d'utilisateur ou email",
-    "USERS_PASSWORD":                       "Mot de passe",
-
-    "HTML_SELECTOR":                        "Recherchez une campagne",
-    "HTML_TITLE":                           "Téléchargez un HTML aux spécificités Unica",
-    "HTML_DESCRIPTION":                     "Sélectionnez une campagne email 1M Sending dans la liste ci-dessous pour télécharger le HTML aux spécificités Unica",
-    "HTML_INFO":                            "HTML à télécharger",
-    "HTML_WARNING":                         "Seules les campagnes en statut \"Brouillon\" apparaissent dans la liste.",
-    "APP_NAME":                             "Traducteur HTML",
-
-    "META_TITLE_LOGIN":                     "Connexion - Traducteur HTML",
-    "META_TITLE_PASSWORD_FORGOT":           "Mot de passe oublié - Traducteur HTML",
-    "META_TITLE_PASSWORD_RESET":            "Réinitialiser le mot de passe - Traducteur HTML",
-    "META_TITLE_APP":                       "Traducteur HTML"
+    "META_TITLE_RANKING":        "Page de classement",
+    "META_TITLE_TEAMS":          "Page des équipes",
+    "META_TITLE_PLAYERS":        "Page des joueurs",
+    "META_TITLE_MATCHS":         "Page des matchs"
 }
