@@ -4,10 +4,25 @@
     "PLAYERS":                   "Joueurs",
     "MATCHS":                    "Matchs",
 
+    "VICTORIES":                 "Victoires",
+    "DRAWS":                     "Nuls",
+    "LOSSES":                    "Défaites",
+
     "TEAM_LIST":                 "Liste des équipes",
+
+    "FIRST_NAME":                "Prénom",
+    "LAST_NAME":                 "Nom",
+    "NICKNAME":                  "Surnom :",
+    "TEAM":                      "Équipe :",
+    "EDIT_PLAYER":               "Éditer le joueur",
+
+    "EDIT_MATCH_SCORE":          "Éditer le score du match",
 
     "META_TITLE_RANKING":        "Page de classement",
     "META_TITLE_TEAMS":          "Page des équipes",
     "META_TITLE_PLAYERS":        "Page des joueurs",
-    "META_TITLE_MATCHS":         "Page des matchs"
+    "META_TITLE_MATCHS":         "Page des matchs",
+
+    "BTN_VALIDATE":              "Valider",
+    "BTN_CANCEL":                "Annuler"
 }

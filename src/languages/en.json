@@ -4,10 +4,25 @@
     "PLAYERS":                   "Players",
     "MATCHS":                    "Matchs",
 
+    "VICTORIES":                 "Victories",
+    "DRAWS":                     "Draws",
+    "LOSSES":                    "Losses",
+
     "TEAM_LIST":                 "Teams List",
+
+    "FIRST_NAME":                "First name :",
+    "LAST_NAME":                 "Last name :",
+    "NICKNAME":                  "Nickname :",
+    "TEAM":                      "Team :",
+    "EDIT_PLAYER":               "Edit player",
+
+    "EDIT_MATCH_SCORE":          "Edit match score",
 
     "META_TITLE_RANKING":        "Ranking Page",
     "META_TITLE_TEAMS":          "Teams Page",
     "META_TITLE_PLAYERS":        "Players Page",
-    "META_TITLE_MATCHS":         "Matchs Page"
+    "META_TITLE_MATCHS":         "Matchs Page",
+
+    "BTN_VALIDATE":              "Validate",
+    "BTN_CANCEL":                "Cancel"
 }
