@@ -2,12 +2,34 @@
   <div>
     <h3>{{$t('MATCHS')}}</h3>
     <div v-for="match in matches" :key="match.id">
-      <match :match="match" v-on:open-dialog="openDialog"></match>
+      <match :match="match" v-on:open-dialog="openEditScoreDialog"></match>
     </div>
 
     <el-dialog
+      :title="$t('CREATE_MATCH')"
+      :visible.sync="createMatchDialogVisible"
+      width="30%"
+      center
+      :show-close="false">
+      <el-form
+        v-model="newMatchForm"
+        class=""
+        ref="newMatchForm">
+
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="closeCreateMatchDialog">
+            {{ $t('BTN_CANCEL') }}
+        </el-button>
+        <el-button type="primary" @click="updateScore">
+          {{ $t('BTN_VALIDATE') }}
+        </el-button>
+      </span>
+    </el-dialog>
+
+    <el-dialog
       :title="$t('EDIT_MATCH_SCORE')"
-      :visible.sync="dialogVisible"
+      :visible.sync="editMatchDialogVisible"
       width="30%"
       center
       :show-close="false">
@@ -31,7 +53,7 @@
         <div>{{ scoreForm.nameTeam2 }}</div>
       </el-form>
       <span slot="footer" class="dialog-footer">
-        <el-button @click="closeDialog">
+        <el-button @click="closeEditScoreDialog">
             {{ $t('BTN_CANCEL') }}
         </el-button>
         <el-button type="primary" @click="updateScore">
@@ -50,7 +72,9 @@ export default {
   components: { Match },
   data() {
     return {
-      dialogVisible: false,
+      createMatchDialogVisible: false,
+      newMatchForm: {},
+      editMatchDialogVisible: false,
       scoreForm: {},
       currentMatch: null,
       scoreValidation: {
@@ -74,7 +98,11 @@ export default {
     },
   },
   methods: {
-    openDialog(match) {
+    closeCreateMatchDialog() {
+      this.createMatchDialogVisible = false;
+      this.newMatchForm = {};
+    },
+    openEditScoreDialog(match) {
       const index = match.score.indexOf('-');
       const length = match.score.length;
       this.scoreForm = {
@@ -85,10 +113,10 @@ export default {
       };
       this.currentMatch = match;
 
-      this.dialogVisible = true;
+      this.editMatchDialogVisible = true;
     },
-    closeDialog() {
-      this.dialogVisible = false;
+    closeEditScoreDialog() {
+      this.editMatchDialogVisible = false;
       this.scoreForm = {};
     },
     updateScore() {
@@ -103,8 +131,16 @@ export default {
         },
         matchId: this.currentMatch.id,
       });
-      this.closeDialog();
+      this.closeEditScoreDialog();
       this.$store.dispatch('getMatches');
+    },
+    createMatch(team1, team2) {
+      this.$store.dispatch('createMatch', {
+        data: {
+          team_1: team1,
+          team_2: team2,
+        },
+      });
     },
   },
 };

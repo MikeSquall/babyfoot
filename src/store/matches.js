@@ -3,11 +3,13 @@ import Vue from 'vue';
 
 const SET_MATCH = 'SET_MATCH';
 const SET_MATCHES = 'SET_MATCHES';
+const SET_CREATING_MATCH = 'SET_CREATING_MATCH';
 
 const moduleMatches = {
   state: {
     selectedMatch: null,
     matches: [],
+    isCreatingMatch: false,
   },
   mutations: {
     [SET_MATCH](state, selectedMatch) {
@@ -15,6 +17,9 @@ const moduleMatches = {
     },
     [SET_MATCHES](state, matches) {
       Vue.set(state, 'matches', matches);
+    },
+    [SET_CREATING_MATCH](state, isCreatingMatch) {
+      Vue.set(state, 'isCreatingMatch', isCreatingMatch);
     },
   },
   actions: {
@@ -58,10 +63,30 @@ const moduleMatches = {
           });
       });
     },
+    createMatch({ commit }, data) {
+      commit(SET_CREATING_MATCH, true);
+      const url = `${config.API_URL}/matches`;
+      return new Promise((resolve, reject) => {
+        Vue.axios.post(url, data)
+          .then((response) => {
+            if (response.status !== 201) {
+              commit(SET_CREATING_MATCH, false);
+              reject(response);
+            }
+            commit(SET_CREATING_MATCH, false);
+            resolve(response);
+          })
+          .catch((error) => {
+            commit(SET_CREATING_MATCH, false);
+            reject(error);
+          });
+      });
+    },
   },
   getters: {
     match: state => state.selectedMatch,
     matches: state => state.matches,
+    isCreatingMatch: state => state.isCreatingMatch,
   },
 };
 
