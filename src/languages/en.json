@@ -25,5 +25,8 @@
     "META_TITLE_MATCHS":         "Matchs Page",
 
     "BTN_VALIDATE":              "Validate",
-    "BTN_CANCEL":                "Cancel"
+    "BTN_CANCEL":                "Cancel",
+
+    "SEARCH_TEAM":               "Search a team",
+    "NO_DATA_TO_DISPLAY":        "No data to display"
 }

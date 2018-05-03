@@ -1,8 +1,20 @@
 <template>
   <div>
     <h3>{{$t('MATCHS')}}</h3>
-    <div v-for="match in matches" :key="match.id">
+    <search-bar
+      :placeholder="$t('SEARCH_TEAM')"
+      :callback="updateQuery"
+      style="width: 300px;">
+    </search-bar>
+    <el-button
+      icon="el-icon-circle-plus"
+      type="primary">
+    </el-button>
+    <div v-for="match in filteredMatches" :key="match.id">
       <match :match="match" v-on:open-dialog="openEditScoreDialog"></match>
+    </div>
+    <div v-show="filteredMatches.length === 0" style="margin-top: 20px;">
+      {{ $t('NO_DATA_TO_DISPLAY') }}
     </div>
 
     <el-dialog
@@ -15,13 +27,34 @@
         v-model="newMatchForm"
         class=""
         ref="newMatchForm">
-
+        <el-form-item :label="$t('TEAM') + ' 1'">
+          <el-select v-model="newMatchForm.team1"
+            filterable
+            placeholder="-"
+            size="small">
+            <el-option v-for="team in teamsList"
+              :key="team"
+              :value="team">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item :label="$t('TEAM') + ' 2'">
+          <el-select v-model="newMatchForm.team2"
+            filterable
+            placeholder="-"
+            size="small">
+            <el-option v-for="team in teamsList"
+              :key="team"
+              :value="team">
+            </el-option>
+          </el-select>
+        </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="closeCreateMatchDialog">
             {{ $t('BTN_CANCEL') }}
         </el-button>
-        <el-button type="primary" @click="updateScore">
+        <el-button type="primary" @click="createMatch()">
           {{ $t('BTN_VALIDATE') }}
         </el-button>
       </span>
@@ -66,10 +99,11 @@
 
 <script>
 import Match from '@/components/Match/Match';
+import SearchBar from '@/components/SearchBar';
 
 export default {
   name: 'matchs-container',
-  components: { Match },
+  components: { Match, SearchBar },
   data() {
     return {
       createMatchDialogVisible: false,
@@ -87,14 +121,30 @@ export default {
           { type: 'number', message: 'score must be a number', trigger: 'blur' },
         ],
       },
+      teamsList: [],
+      query: '',
     };
   },
   created() {
     this.$store.dispatch('getMatches');
+    this.$store.dispatch('getTeams')
+      .then((response) => {
+        const list = response.data.objects;
+        list.forEach((t) => {
+          this.teamsList.push(t.name);
+        });
+      });
   },
   computed: {
     matches() {
       return this.$store.getters.matches;
+    },
+    filteredMatches() {
+      return this.matches.filter((match) => {
+        const f = match.teams[0].name.toUpperCase().includes(this.query) ||
+                  match.teams[1].name.toUpperCase().includes(this.query);
+        return f;
+      });
     },
   },
   methods: {
@@ -133,6 +183,9 @@ export default {
       });
       this.closeEditScoreDialog();
       this.$store.dispatch('getMatches');
+    },
+    updateQuery(query) {
+      this.query = query.toUpperCase();
     },
     createMatch(team1, team2) {
       this.$store.dispatch('createMatch', {
