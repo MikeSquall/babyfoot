@@ -2,7 +2,7 @@
   <div class="match" @mouseenter="showEditButton" @mouseleave="hideEditButton">
     <el-row :gutter="20" @click="editScore">
       <el-col :span="3" :offset="2">
-        <icon name="trophy" class="trophy-icon" v-if="match.winner === 1"></icon>
+        <icon name="trophy" class="trophy-icon" v-if="match.winner === match.teams[0].id"></icon>
         <div v-else>-</div>
       </el-col>
       <el-col :span="5">
@@ -15,7 +15,7 @@
         {{ match.teams[1].name }}
       </el-col>
       <el-col :span="3">
-        <icon name="trophy" class="trophy-icon" v-if="match.winner === 2"></icon>
+        <icon name="trophy" class="trophy-icon" v-if="match.winner === match.teams[1].id"></icon>
         <div v-else>-</div>
       </el-col>
       <el-col :span="2">
